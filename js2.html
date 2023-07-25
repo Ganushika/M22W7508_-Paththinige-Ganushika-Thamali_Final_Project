@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" media="(min-width: 640px)" href="all_pc.css">
+<link rel="stylesheet" media="(max-width: 640px)" href="all_smp.css">
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<link href="flexslider.css" rel="stylesheet">
+<script src="jquery.flexslider-min.js"></script>
+<script>
+  $(function(){
+    $('.flexslider').flexslider({
+      animation: "slide"
+    });
+  });
+</script>
+
+<script>
+	var item=["Please input your name.","Please input your age.","Please input your telephone number","Please input your email."];
+
+	function check(){
+		var elem =document.fm.elements;
+		for(var i=0;i<4;i++){
+			if(elem[i].value !=""){
+				elem[i].style.color="#0000FF";
+				switch(elem[i].name){
+					case "age":			
+						if(isNaN(elem[i].value)){
+							alert("Please input correct age.");
+							elem[i].style.color="#FF0000";
+						}else if(elem[i].value<0){
+							elem[i].style.color="#FF0000";
+							alert("You did not input the correct numbers.");
+						}
+						break;
+					
+					case "tel":
+						if(!elem[i].value.match(/^\d{2,3}-\d{4}-\d{4}$/)){
+							elem[i].style.color="#FF0000";
+							alert("Please input correct telephone number");
+						}
+					break;
+					
+					case "mail":
+						if(!elem[i].value.match(/^\S+@\S+\.\S+$/)){
+							elem[i].style.color="#FF0000";
+							alert("Please input correct e-mail number.");
+						}
+					break;
+				}
+			}else{
+				alert(item[i]);
+			}
+		}
+	}
+</script>
+
+</head>
+
+<body style="background-image:url(bg050.gif);">
+<div id="pagebody" style="height: 1200px;">
+	<header>
+	<div class="flexslider" style="border-color:#CFC;;">
+      <ul class="slides">
+        <li><img src="img/1.jpg" /></li>
+        <li><img src="img/2.jpg" /></li>
+        <li><img src="img/3.jpg" /></li>
+        <li><img src="img/4.jpg" /></li>
+        <li><img src="img/5.jpg" /></li>
+        <li><img src="img/6.jpg" /></li>
+        <li><img src="img/7.jpg" /></li>
+        <li><img src="img/8.jpg" /></li>
+      </ul>
+    </div>
+
+    <div class="topnav">
+    	<div class="topnavde"><a href="index.html"><b>Top page</b></a></div>
+			<div class="topnavde"><a href="js1.html"><b>Score</b></a></div>
+			<div class="topnavde"><a href="js2.html"><b>Shop</b></a></div>
+			<div class="topnavde"><a href="js3.html"><b>JS World</b></a></div>
+			<div class="topnavde"><a href="js4.html"><b>Form</b></a></div>
+			<div class="topnavde"><a href="js5.html"><b>Map</b></a></div>
+			<div class="topnavde"><a href="js6.html"><b>Anima</b></a></div>
+    </div>
+    
+	</header>
+
+	<title>The Floral Outlet</title>
+</head>
+<body>
+	<style>
+		body{
+			text-align: center;
+			background-color: #ffe6f9;
+		}
+	</style>
+
+	<h1 style="color: #fc03c6;"> WELCOME
+	</br>  FLORAL OUTLET</h1>
+</br>
+
+<table width="100%">
+	<tr>
+		<td width="60%">
+			<div>
+				<img onclick="change1()" src="img/11.jpg" width="125px" height="125px" border="3">
+				<img onclick="change2()" src="img/12.jpg" width="125px" height="125px" border="3">
+				<img onclick="change3()" src="img/13.jpg" width="125px" height="125px" border="3">
+			</br>
+				<img onclick="change4()" src="img/14.jpg" width="125px" height="125px" border="3">
+				<img onclick="change5()" src="img/15.jpg" width="125px" height="125px" border="3">
+				<img onclick="change6()" src="img/16.jpg" width="125px" height="125px" border="3">
+			</br>
+				<img onclick="change7()" src="img/17.jpg" width="125px" height="125px" border="3">
+				<img onclick="change8()" src="img/18.jpg" width="125px" height="125px" border="3">
+				<img onclick="change9()" src="img/9.jpg" width="125px" height="125px" border="3">
+			</br>
+				<img onclick="change10()" src="img/10.jpg" width="125px" height="125px" border="3">	
+			</div>
+		</td>
+ 
+		<td width="40%">
+			<div>
+				<img id="image" src="img/11.jpg" width="500px" height="500px" border="5" >	
+			</div>	
+		</td>
+	</tr>
+</table>
+
+	<script type="text/javascript">
+		function change1()
+		{
+			document.getElementById('image').src="img/11.jpg";
+		}
+		function change2()
+		{
+			document.getElementById('image').src="img/12.jpg";
+		}
+		function change3()
+		{
+			document.getElementById('image').src="img/13.jpg";
+		}
+		function change4()
+		{
+			document.getElementById('image').src="img/14.jpg";
+		}
+		function change5()
+		{
+			document.getElementById('image').src="img/15.jpg";
+		}
+		function change6()
+		{
+			document.getElementById('image').src="img/16.jpg";
+		}
+		function change7()
+		{
+			document.getElementById('image').src="img/17.jpg";
+		}
+		function change8()
+		{
+			document.getElementById('image').src="img/18.jpg";
+		}
+		function change9()
+		{
+			document.getElementById('image').src="img/9.jpg";
+		}
+		function change10()
+		{
+			document.getElementById('image').src="img/10.jpg";
+		}
+	</script>
+
+		<footer>Copyright (C) 2023s copyrights. KCGI.All Rights Reserved.</footer>
+
+
+</body>
+</html>

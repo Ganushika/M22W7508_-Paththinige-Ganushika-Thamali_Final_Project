@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" media="(min-width: 640px)" href="all_pc.css">
+<link rel="stylesheet" media="(max-width: 640px)" href="all_smp.css">
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<link href="flexslider.css" rel="stylesheet">
+<script src="jquery.flexslider-min.js"></script>
+<script>
+  $(function(){
+    $('.flexslider').flexslider({
+      animation: "slide"
+    });
+  });
+</script>
+
+<script>
+	var item=["Please input your name.","Please input your age.","Please input your telephone number","Please input your email."];
+
+	function check(){
+		var elem =document.fm.elements;
+		for(var i=0;i<4;i++){
+			if(elem[i].value !=""){
+				elem[i].style.color="#0000FF";
+				switch(elem[i].name){
+					case "age":			
+						if(isNaN(elem[i].value)){
+							alert("Please input correct age.");
+							elem[i].style.color="#FF0000";
+						}else if(elem[i].value<0){
+							elem[i].style.color="#FF0000";
+							alert("You did not input the correct numbers.");
+						}
+						break;
+					
+					case "tel":
+						if(!elem[i].value.match(/^\d{2,3}-\d{4}-\d{4}$/)){
+							elem[i].style.color="#FF0000";
+							alert("Please input correct telephone number");
+						}
+					break;
+					
+					case "mail":
+						if(!elem[i].value.match(/^\S+@\S+\.\S+$/)){
+							elem[i].style.color="#FF0000";
+							alert("Please input correct e-mail number.");
+						}
+					break;
+				}
+			}else{
+				alert(item[i]);
+			}
+		}
+	}
+</script>
+
+</head>
+
+<body style="background-image:url(bg050.gif);">
+<div id="pagebody" style="height: 1200px;">
+	<header>
+	<div class="flexslider" style="border-color:#CFC;;">
+      <ul class="slides">
+        <li><img src="img/1.jpg" /></li>
+        <li><img src="img/2.jpg" /></li>
+        <li><img src="img/3.jpg" /></li>
+        <li><img src="img/4.jpg" /></li>
+        <li><img src="img/5.jpg" /></li>
+        <li><img src="img/6.jpg" /></li>
+        <li><img src="img/7.jpg" /></li>
+        <li><img src="img/8.jpg" /></li>
+      </ul>
+    </div>
+
+    <div class="topnav">
+    	<div class="topnavde"><a href="index.html"><b>Top page</b></a></div>
+			<div class="topnavde"><a href="js1.html"><b>Score</b></a></div>
+			<div class="topnavde"><a href="js2.html"><b>Shop</b></a></div>
+			<div class="topnavde"><a href="js3.html"><b>JS World</b></a></div>
+			<div class="topnavde"><a href="js4.html"><b>Form</b></a></div>
+			<div class="topnavde"><a href="js5.html"><b>Map</b></a></div>
+			<div class="topnavde"><a href="js6.html"><b>Anima</b></a></div>
+    </div>
+	</style>
+</head>
+<body>
+	<style>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+	<style type="text/css">
+	
+		img{
+			width: 400px;
+			height: 260px;
+			border-radius: 10px;
+			margin-top: 20px;
+		}
+		
+	</style>
+
+		<div class="container">
+			<div class="name" class="form-group">
+			<div class="col-md-10">
+				First name: <br> <input type="text"  class="form-control" id="fname"  name="fname" placeholder="Enter Your First Name"><br> <br>
+				  Last name: <br> <input type="text"  class="form-control"  id="lname" name="lname" placeholder="Enter Your Last Name"><br>
+				  <h4 id="name"></h4>
+				  <input type="button" class="btn btn-warning" onclick="myFunction()" value="Submit">
+			</div>
+			<br>	
+
+			<script>
+			function myFunction() {
+			  var a =document.getElementById("fname").value;
+			  var b =document.getElementById("lname").value;
+			  document.getElementById("name").textContent = "Welcome "+a+" "+b;
+			}
+			
+			</script>
+		</div><br>
+
+     
+    
+    <div class="color" >
+    <div class="col-md-8">
+    	<div class="form-group">
+    		Select Color: <br> <br>
+    <input  type="radio" name="color" value="Red">Red
+    <input  type="radio" name="color" value="Green">Green
+    <input  type="radio" name="color" value="Blue">Blue
+    <br>
+     <h4 id="result"></h4>
+    <button class="btn btn-warning" type="button" onclick="displayRadioValue()">
+        Submit
+    </button>
+    	</div>
+    </div>
+    <br>
+   
+    <script>
+        function displayRadioValue() {
+            var ele = document.getElementsByName('color');
+ 
+            for (i = 0; i < ele.length; i++) {
+                if (ele[i].checked)
+                    document.getElementById("result").innerHTML
+                        = "Your Color is: " + ele[i].value;
+            }
+        }
+    </script>
+    </div>
+
+
+    <div class="language">
+    	<div class="col-md-8">
+    		<div class="form-group">
+    			<p> Select Your Language:
+        <select id="select" class="form-control">
+            <option value="Sinhala">Select</option>
+            <option value="Sinhala">Sinhala</option>
+            <option value="English">English</option>
+            <option value="Japanese">Japanese</option>
+        </select>
+    </p>
+ 	<h4 id="output"></h4>
+  
+ 
+ 
+    <button class="btn btn-warning" onclick="getOption()"> Check option </button><br>
+     
+    		</div>
+    	</div>
+   	
+    <script type="text/javascript">
+    function getOption() {
+        selectElement = document.querySelector('#select');
+        output = selectElement.value;
+        document.getElementById('output').textContent = "Language: "+output;
+    }
+    </script>
+    </div>
+
+	<div class="col-md-8">
+		<div class="img">
+		<br>	
+		<button class="btn btn-danger" onClick="showImage()">View image</button> <br>
+
+<center>	
+	<div id="first" style="height:200px; width:200px; display:none;">
+	    <img width="200" height="150" src="img/16.jpg" onmouseover="hover(this);"/> 
+	</div>
+</center>
+	  
+	<script>
+    const showImage = () => {
+        document.getElementById("first").style.display ='block';
+    }
+    function hover(img)
+	{
+	 img.src = "img/shop/img3.jpeg"
+	}
+
+	</script>
+	</div>
+	</div>
+		</div>
+
+	<footer>Copyright (C) 2023s copyrights. KCGI.All Rights Reserved.</footer>
+
+</body>
+</html>
